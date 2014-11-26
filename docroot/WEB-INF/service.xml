@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="gr.open.loglevelsmanager.loglevel">
+	<author>Jack A. Rider</author>
+	<namespace>loglevel</namespace>
+	
+	<entity name="LogLevel" local-service="true" remote-service="false" uuid="false" trash-enabled="false">
+		<!-- Primary key column -->
+		<column name="LogLevelId" type="long" primary="true" />
+
+		<!-- Foreign key columns -->
+		<column name="companyId" type="long" />
+		<column name="groupId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other columns -->
+		<column name="logLevelDescription" type="String" />
+		<column name="logLevelPriority" type="String" />
+		<column name="logLevelCategory" type="String" />
+		<column name="logLevelScheduled" type="boolean" />
+		<column name="logLevelStartDate" type="Date" />
+		<column name="logLevelEndDate" type="Date" />
+		<column name="activateOnStartup" type="boolean" />
+
+		<!-- Finder Methods Standard -->		
+		<finder name="GroupId" return-type="Collection">
+			<finder-column name="groupId" />
+		</finder>		
+		<finder name="UserIdGroupId" return-type="Collection">
+			<finder-column name="userId" />
+			<finder-column name="groupId" />
+		</finder>
+		<finder name="UserId" return-type="Collection">
+			<finder-column name="userId" />
+		</finder>
+		<finder name="CompanyId" return-type="Collection">
+			<finder-column name="companyId" />
+		</finder>
+		<finder name="ActivateOnStartup" return-type="Collection">
+			<finder-column name="activateOnStartup" />
+		</finder>	
+		<finder name="Scheduled" return-type="Collection">
+			<finder-column name="logLevelScheduled" />
+		</finder>	
+		<!-- References -->	
+	</entity>
+	
+	<exceptions>
+		<exception>NoSuchLogLevel</exception>
+	</exceptions>
+
+</service-builder>

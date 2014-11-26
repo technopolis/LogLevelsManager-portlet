@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="gr.open.loglevelsmanager.loglevel.model.LogLevel">
+		<field name="LogLevelId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="logLevelDescription" type="String" />
+		<field name="logLevelPriority" type="String" />
+		<field name="logLevelCategory" type="String" />
+		<field name="logLevelScheduled" type="boolean" />
+		<field name="logLevelStartDate" type="Date" />
+		<field name="logLevelEndDate" type="Date" />
+		<field name="activateOnStartup" type="boolean" />
+	</model>
+</model-hints>

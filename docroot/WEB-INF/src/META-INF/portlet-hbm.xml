@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="gr.open.loglevelsmanager.loglevel.model.LogLevel" />
+	<class name="gr.open.loglevelsmanager.loglevel.model.impl.LogLevelImpl" table="loglevel_LogLevel">
+		<cache usage="read-write" />
+		<id name="LogLevelId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="logLevelDescription" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="logLevelPriority" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="logLevelCategory" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="logLevelScheduled" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="logLevelStartDate" type="org.hibernate.type.TimestampType" />
+		<property name="logLevelEndDate" type="org.hibernate.type.TimestampType" />
+		<property name="activateOnStartup" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+	</class>
+</hibernate-mapping>
